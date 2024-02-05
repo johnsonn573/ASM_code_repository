@@ -2,7 +2,8 @@
 
 Some raw data description:    \
 The raw data can be downloaded from SRR using fastq-dump from SRA tools. We performed this download on your human genetics Emory server (HGCC).
-More specifically, we ran the following scripts to download the data from SRR.    \\
+More specifically, we ran the following scripts to download the data from SRR.    \
+\
 fastqdumpB01B02B03.sh    \
 fastqdumpB04_single.sh    \
 fastqdumpB04_dual.sh    \
