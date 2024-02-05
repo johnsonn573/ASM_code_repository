@@ -1,0 +1,168 @@
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464041,sample=B01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464042,sample=B01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464043,sample=B01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464044,sample=B01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464045,sample=B01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464046,sample=B01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464047,sample=B01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464048,sample=B01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464049,sample=B01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464050,sample=B01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464051,sample=B01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464052,sample=B01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464053,sample=B01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464054,sample=B01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464055,sample=B01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464056,sample=B01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464057,sample=B01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464058,sample=B01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464059,sample=B01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464060,sample=B01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464061,sample=B01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464062,sample=B01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464063,sample=B01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464064,sample=B01 ../fastq_to_sc_bam.sh
+
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464065,sample=B02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464066,sample=B02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464067,sample=B02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464068,sample=B02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464069,sample=B02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464070,sample=B02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464071,sample=B02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464072,sample=B02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464073,sample=B02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464074,sample=B02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464075,sample=B02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464076,sample=B02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464077,sample=B02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464078,sample=B02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464079,sample=B02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464080,sample=B02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464081,sample=B02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464082,sample=B02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464083,sample=B02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464084,sample=B02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464085,sample=B02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464086,sample=B02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464087,sample=B02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464088,sample=B02 ../fastq_to_sc_bam.sh
+
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464089,sample=B03 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464090,sample=B03 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464091,sample=B03 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464092,sample=B03 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464093,sample=B03 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464094,sample=B03 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464095,sample=B03 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6464096,sample=B03 ../fastq_to_sc_bam.sh
+
+qsub -q b.q -pe smp 2 -cwd -j y -v SRR=SRR8579045,sample=B04_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 2 -cwd -j y -v SRR=SRR8579046,sample=B04_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 2 -cwd -j y -v SRR=SRR8579047,sample=B04_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 2 -cwd -j y -v SRR=SRR8579048,sample=B04_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 2 -cwd -j y -v SRR=SRR8579049,sample=B04_dual ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 2 -cwd -j y -v SRR=SRR8579050,sample=B04_dual ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 2 -cwd -j y -v SRR=SRR8579051,sample=B04_dual ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 2 -cwd -j y -v SRR=SRR8579052,sample=B04_dual ../fastq_to_sc_bam.sh
+
+qsub -q b.q -pe smp 2 -cwd -j y -v SRR=SRR8579148,sample=B05_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 2 -cwd -j y -v SRR=SRR8579149,sample=B05_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 2 -cwd -j y -v SRR=SRR8579150,sample=B05_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 2 -cwd -j y -v SRR=SRR8579151,sample=B05_alone ../fastq_to_sc_bam.sh
+
+qsub -q b.q -pe smp 2 -cwd -j y -v SRR=SRR8579152,sample=B06_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 2 -cwd -j y -v SRR=SRR8579153,sample=B06_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 2 -cwd -j y -v SRR=SRR8579154,sample=B06_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 2 -cwd -j y -v SRR=SRR8579155,sample=B06_alone ../fastq_to_sc_bam.sh
+
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463911,sample=CLL01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463912,sample=CLL01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463913,sample=CLL01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463914,sample=CLL01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463915,sample=CLL01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463916,sample=CLL01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463917,sample=CLL01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463918,sample=CLL01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463919,sample=CLL01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463920,sample=CLL01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463921,sample=CLL01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463922,sample=CLL01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463923,sample=CLL01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463924,sample=CLL01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463925,sample=CLL01 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463926,sample=CLL01 ../fastq_to_sc_bam.sh
+
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463927,sample=CLL02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463928,sample=CLL02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463929,sample=CLL02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463930,sample=CLL02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463931,sample=CLL02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463932,sample=CLL02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463933,sample=CLL02 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463934,sample=CLL02 ../fastq_to_sc_bam.sh
+
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579156,sample=CLL03_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579157,sample=CLL03_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579158,sample=CLL03_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579159,sample=CLL03_alone ../fastq_to_sc_bam.sh
+
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579160,sample=CLL03_dual ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579161,sample=CLL03_dual ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579162,sample=CLL03_dual ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579163,sample=CLL03_dual ../fastq_to_sc_bam.sh
+
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579360,sample=CLL04 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579361,sample=CLL04 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579362,sample=CLL04 ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579363,sample=CLL04 ../fastq_to_sc_bam.sh
+
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579364,sample=CLL04_dual ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579365,sample=CLL04_dual ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579366,sample=CLL04_dual ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579367,sample=CLL04_dual ../fastq_to_sc_bam.sh
+
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579564,sample=CLL05_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579565,sample=CLL05_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579566,sample=CLL05_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579567,sample=CLL05_alone ../fastq_to_sc_bam.sh
+
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579568,sample=CLL05_dual ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579569,sample=CLL05_dual ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579570,sample=CLL05_dual ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579571,sample=CLL05_dual ../fastq_to_sc_bam.sh
+
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579768,sample=CLL06_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579769,sample=CLL06_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579770,sample=CLL06_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579771,sample=CLL06_alone ../fastq_to_sc_bam.sh
+
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579772,sample=CLL07_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579773,sample=CLL07_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579774,sample=CLL07_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579775,sample=CLL07_alone ../fastq_to_sc_bam.sh
+
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579776,sample=CLL08_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579777,sample=CLL08_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579778,sample=CLL08_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579779,sample=CLL08_alone ../fastq_to_sc_bam.sh
+
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579780,sample=CLL09_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579781,sample=CLL09_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579782,sample=CLL09_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579783,sample=CLL09_alone ../fastq_to_sc_bam.sh
+
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579784,sample=CLL10_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579785,sample=CLL10_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579786,sample=CLL10_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579787,sample=CLL10_alone ../fastq_to_sc_bam.sh
+
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463935,sample=CLL11_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463936,sample=CLL11_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463937,sample=CLL11_alone ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR6463938,sample=CLL11_alone ../fastq_to_sc_bam.sh
+
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579788,sample=CLL12_dual ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579789,sample=CLL12_dual ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579790,sample=CLL12_dual ../fastq_to_sc_bam.sh
+qsub -q b.q -pe smp 10 -cwd -j y -v SRR=SRR8579791,sample=CLL12_dual ../fastq_to_sc_bam.sh
