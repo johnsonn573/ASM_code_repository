@@ -36,3 +36,41 @@ Because the raw data was generated from scRRBS in such a way that reads in the f
 
 Once all the fastq data was deposited onto our server and the genome was created, we ran fastq_to_sc_bam.sh, which is a script that demultiplexes the fastq files, trims the reads, performs genomic alignment using Bismark, and filters out reads with MAPQ scores < 20.
 A qsub command was run on each pair of fastq files. These qsub commands can be found in the txt file qsub_commands_for_fastq_to_sc_bam_script.txt.
+
+## Name-sorting bam files.
+
+We name-sorted all the bam files using samtools with the following scripts.    \
+\
+namesortb01.sh    \
+namesortb02.sh    \
+namesortb03.sh    \
+namesortb04.sh    \
+namesortb05.sh    \
+namesortb06.sh    \
+namesortcll01.sh    \
+namesortcll02.sh    \
+namesortcll03_alone.sh    \
+namesortcll03_dual.sh    \
+namesortcll04.sh    \
+namesortcll04.sh    \
+namesortcll04_dual.sh    \
+namesortcll05_alone.sh    \
+namesortcll05_dual.sh    \
+namesortcll06_alone.sh    \
+namesortcll07_alone.sh    \
+namesortcll08_alone.sh    \
+namesortcll08_alone_SRR8579779.sh    \
+namesortcll09_alone.sh    \
+namesortcll09_alone_SRR8579782.sh    \
+namesortcll09_alone_SRR8579783.sh    \
+namesortcll10_alone.sh    \
+namesortcll10_alone_SRR8579785.sh    \
+namesortcll10_alone_SRR8579787.sh    \
+namesortcll10_alone_SRR8579789.sh    \
+namesortcll11_alone.sh    \
+namesortcll12_dual.sh    \
+namesortcll12_dual_SRR8579789.sh    \
+namesortcll12_dual_SRR8579791.sh    \
+
+
+
