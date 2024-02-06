@@ -75,6 +75,7 @@ namesortcll12_dual_SRR8579791.sh
 ## Bismark methylation extractor.
 
 We ran the bismark methylating extractor on each bam file using the following scripts.    \
+\
 b01methylationextract.sh    \
 b02methylationextract.sh    \
 b03methylationextract.sh    \
