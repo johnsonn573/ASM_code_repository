@@ -70,7 +70,34 @@ namesortcll10_alone_SRR8579789.sh    \
 namesortcll11_alone.sh    \
 namesortcll12_dual.sh    \
 namesortcll12_dual_SRR8579789.sh    \
-namesortcll12_dual_SRR8579791.sh    \
+namesortcll12_dual_SRR8579791.sh
 
+## Bismark methylation extractor.
 
-
+We ran the bismark methylating extractor on each bam file using the following scripts.    \
+b01methylationextract.sh    \
+b02methylationextract.sh    \
+b03methylationextract.sh    \
+b04methylationextract.sh    \
+b05methylationextract.sh    \
+b06methylationextract.sh    \
+cll01methylationextract.sh    \
+cll02methylationextract.sh    \
+cll03_dual_methylationextract.sh    \
+cll04methylationextract.sh    \
+cll05_alone_methylationextract.sh    \
+cll05_dual_methylationextract.sh    \
+cll06_alone_methylationextract.sh    \
+cll07_alone_methylationextract.sh    \
+cll08_alone_methylationextract.sh    \
+cll09_alone_methylationextract.sh    \
+cll09_alone_methylationextract_SRR8579782.sh    \
+cll09_alone_methylationextract_SRR8579783.sh    \
+cll10methylationextract.sh    \
+cll10methylationextract_SRR8579785.sh    \
+cll10methylationextract_SRR8579786.sh    \
+cll10methylationextract_SRR8579787.sh    \
+cll11methylationextract.sh    \
+cll12methylationextract.sh    \
+cll12methylationextract_SRR8579789.sh    \
+cll12methylationextract_SRR8579791.sh
