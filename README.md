@@ -125,7 +125,7 @@ cov_to_small_qc_CLL.R \
 cov_to_small_B01B02B03_qc_v2.R \
 cov_to_small_B04B05B06_paired_qc_v2.R
 
-## Marking CpGs w/ not data
+## Marking CpGs w/ no data
 
 To reduce file sizes in downstream analyses, we created a Genomic Ranges file (cg_genome.gr), which marked all the CpG sites in the human genome using a script called cg_genome.R. We then ran the scripts na_B_v3.R and na_CLL.R, which markes all the CpGs that have no data in B-cell samples and CLL samples, respectively.
 
