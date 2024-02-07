@@ -114,10 +114,8 @@ cll12methylationextract_SRR8579791.sh
 ## Converting the remaining cov.gz files to Rdata files.
 
 We used the following scripts to perform the conversion. \
-cov_to_small_paired_CLL.R \
-cov_to_small_B04_paired.R \
-cov_to_small_B05_paired.R \
-cov_to_small_B06_paired.R
+cov_to_small_paired_CLL.R (CLL samples) \
+cov_to_small_paired_v2.R (B-cell samples)
 
 ## QC Filtering
 
