@@ -121,8 +121,8 @@ cov_to_small_paired_v2.R (B-cell samples)
 
 We filtered out cells with a mean number of reads per CpGs < 5 using the following scripts. \
 
-cov_to_small_qc_CLL.R
-cov_to_small_B01B02B03_qc_v2.R
+cov_to_small_qc_CLL.R \
+cov_to_small_B01B02B03_qc_v2.R \
 cov_to_small_B04B05B06_paired_qc_v2.R
 
 
