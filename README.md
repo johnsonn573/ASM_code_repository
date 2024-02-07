@@ -41,6 +41,10 @@ A qsub command was run on each pair of fastq files. These qsub commands can be f
 
 Recall that cells were split across multiple fastq files on SRR when they were originally deposited. At this step, we remedy this issue for CLL01 and CLL02 by creating a shell script (merge_by_cell_CLL.sh) using the R script merge_by_cell_CLL.R. The shell script outputs bam files that have been merged by cell using samtools.
 
+## Merging files by cell (B-cell samples)
+
+Similarly to CLL01 and CLL02, we also merged by cell for B01-B03 by first generating a shell script (merge_by_cell_v3.sh) using an R script (merge_by_cell_v3.R) and then running that shell script.
+
 ## Name-sorting bam files.
 
 We name-sorted all the bam files using samtools with the following scripts.    \
@@ -106,10 +110,6 @@ cll11methylationextract.sh    \
 cll12methylationextract.sh    \
 cll12methylationextract_SRR8579789.sh    \
 cll12methylationextract_SRR8579791.sh
-
-## Merging files by cell (B-cell samples)
-
-We used an R script called cov_to_small_B01B02B03.R, which inputed cov.gz files (output of the Bismark methylation extractor) for B01, B02, and B03, and merged the data by cell. The output is cell-level Rdata files.
 
 ## Converting the remaining cov.gz files to Rdata files.
 
