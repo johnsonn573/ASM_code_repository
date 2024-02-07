@@ -37,6 +37,10 @@ Because the raw data was generated from scRRBS in such a way that reads in the f
 Once all the fastq data was deposited onto our server and the genome was created, we ran fastq_to_sc_bam.sh, which is a script that demultiplexes the fastq files, trims the reads, performs genomic alignment using Bismark, and filters out reads with MAPQ scores < 20.
 A qsub command was run on each pair of fastq files. These qsub commands can be found in the txt file qsub_commands_for_fastq_to_sc_bam_script.txt.
 
+## Merging by cell (B-cell samples)
+
+We generated a bashscript (merge_by_cell_v3.sh) using an R script (merge_by_cell_v3.R). We thene ran merge_by_cell_v3.sh on our server to merge samples B01, B02, and B03 by cell.
+
 ## Name-sorting bam files.
 
 We name-sorted all the bam files using samtools with the following scripts.    \
