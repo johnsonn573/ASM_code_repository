@@ -37,9 +37,9 @@ Because the raw data was generated from scRRBS in such a way that reads in the f
 Once all the fastq data was deposited onto our server and the genome was created, we ran fastq_to_sc_bam.sh, which is a script that demultiplexes the fastq files, trims the reads, performs genomic alignment using Bismark, and filters out reads with MAPQ scores < 20.
 A qsub command was run on each pair of fastq files. These qsub commands can be found in the txt file qsub_commands_for_fastq_to_sc_bam_script.txt.
 
-## Merging by cell (B-cell samples)
+## Merging files by cell (CLL samples)
 
-We generated a bashscript (merge_by_cell_v3.sh) using an R script (merge_by_cell_v3.R). We thene ran merge_by_cell_v3.sh on our server to merge samples B01, B02, and B03 by cell.
+Recall that cells were split across multiple fastq files on SRR when they were originally deposited. At this step, we remedy this issue for CLL01 and CLL02 by creating a shell script (merge_by_cell_CLL.sh) using the R script merge_by_cell_CLL.R. The shell script outputs bam files that have been merged by cell using samtools.
 
 ## Name-sorting bam files.
 
@@ -107,8 +107,24 @@ cll12methylationextract.sh    \
 cll12methylationextract_SRR8579789.sh    \
 cll12methylationextract_SRR8579791.sh
 
-## Merging files by cell (CLL samples)
+## Merging files by cell (B-cell samples)
 
-Recall that cells were split across multiple fastq files on SRR when they were originally deposited. At this step, we remedy this issue To merge data by cell, we ran the script, merge_by_cell_CLL.R, which uses CLL01_bam_names.txt and CLL02_bam_names.txt as inputs.
+We used an R script called cov_to_small_B01B02B03.R, which inputed cov.gz files (output of the Bismark methylation extractor) for B01, B02, and B03, and merged the data by cell. The output is cell-level Rdata files.
+
+## Converting the remaining cov.gz files to Rdata files.
+
+We used the following scripts to perform the conversion. \
+cov_to_small_paired_CLL.R \
+cov_to_small_B04_paired.R \
+cov_to_small_B05_paired.R \
+cov_to_small_B06_paired.R
+
+## QC Filtering
+
+We filtered out cells with a mean number of reads per CpGs < 5 using the following scripts. \
+
+cov_to_small_qc_CLL.R
+cov_to_small_B01B02B03_qc_v2.R
+cov_to_small_B04B05B06_paired_qc_v2.R
 
 
