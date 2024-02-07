@@ -107,7 +107,8 @@ cll12methylationextract.sh    \
 cll12methylationextract_SRR8579789.sh    \
 cll12methylationextract_SRR8579791.sh
 
-## Merging files by cell
+## Merging files by cell (CLL samples)
 
 Recall that cells were split across multiple fastq files on SRR when they were originally deposited. At this step, we remedy this issue To merge data by cell, we ran the script, merge_by_cell_CLL.R, which uses CLL01_bam_names.txt and CLL02_bam_names.txt as inputs.
+
 
