@@ -129,5 +129,5 @@ cov_to_small_B04B05B06_paired_qc_v2.R
 
 For each CpG, we counted up the (1) number of fully methylated cells, (2) number of fully unmethylated cells, (3) number of cells with both methylated and unmethylated read overlaps as well as the number of methylated and unmethylated reads originating from each of these 3 types of cells.
 
-cts_per_sample_bothstrands_paired_B.R \
+cts_per_sample_bothstrands_paired_B.R    \
 cts_per_sample_bothstrands_paired_CLL.R
