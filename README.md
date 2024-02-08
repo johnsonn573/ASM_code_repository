@@ -162,7 +162,7 @@ likelihood_B.R
 To account for asymmetry among methylated/unmethylated cells, we performed a one-sided weight Z-test, using the following scripts:    \
     \
 pvalue2_metaZ_B.R    \
-pvalue2_metaZ_CLL.R    \
+pvalue2_metaZ_CLL.R
 
 ## Global ASM and Manhattan plots (Fig. 2)
 
