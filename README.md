@@ -131,7 +131,26 @@ To reduce file sizes in downstream analyses, we created a Genomic Ranges file (c
 
 ## Counting methylation at each CpG. 
 
-For each CpG, we counted up the (1) number of fully methylated cells, (2) number of fully unmethylated cells, (3) number of cells with both methylated and unmethylated read overlaps as well as the number of methylated and unmethylated reads originating from each of these 3 types of cells.
+For each CpG, we counted up the (1) number of fully methylated cells, (2) number of fully unmethylated cells, (3) number of cells with both methylated and unmethylated read overlaps as well as the number of methylated and unmethylated reads originating from each of these 3 types of cells. We used the following scripts to perform this task.
 
 cts_per_sample_bothstrands_paired_B.R    \
-cts_per_sample_bothstrands_paired_CLL.R
+cts_per_sample_bothstrands_paired_CLL.R \    
+\   
+We also generated matrices for each sample with rows corresponding to CpGs and columns corresponding to cells. For the B01 sample, these are the following matrices: \      
+matrix.m1B01: counts of all methylated reads on the sense strand by cell & CpG \   
+matrix.m2B01: counts of all methylated reads on the anti-sense strand by cell & CpG \   
+matrix.u1B01: counts of all unmethylated reads on the sense strand by cell & CpG \   
+matrix.u2B01: counts of all unmethylated reads on the anti-sense strand by cell & CpG \   
+\   
+For the 4 following matrices, only cells w/ both methylated and unmethylated reads included for a given CpG. \   
+matrix.m1B01.asm: counts of all methylated reads on the sense strand by cell & CpG \   
+matrix.m2B01.asm: counts of all methylated reads on the anti-sense strand by cell & CpG \   
+matrix.u1B01.asm: counts of all unmethylated reads on the sense strand by cell & CpG \   
+matrix.u2B01.asm: counts of all unmethylated reads on the anti-sense strand by cell & CpG \
+ \   
+These matrices were created for all B-cell samples and all CLL samples. \   
+
+
+
+
+
