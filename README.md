@@ -167,9 +167,6 @@ prefixed_Homo_sapiens.GRCh38.87.chr.gtf    \
 An Excel file with human imprinted genes and their coordinates. The genes for this file were taken from https://www.geneimprint.com/ and manually edited.    \
 Imprinted_Genes2023_coordinates.xlsx    \
     \
-
 The scripts to generate the manhattan plots are as follows:    \
 manhattan_code_v4_metaZ.R (for B-cell samples)    \
 manhattan_code_metaZ_CLL.R (for CLL samples)
-
-
