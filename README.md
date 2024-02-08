@@ -177,3 +177,10 @@ Imprinted_Genes2023_coordinates.xlsx    \
 The scripts to generate the manhattan plots are as follows:    \
 manhattan_code_v4_metaZ.R (for B-cell samples)    \
 manhattan_code_metaZ_CLL.R (for CLL samples)
+
+## Calling sample-level ASM
+
+We used the following scripts to call ASM at the sample level.    \
+    \
+asm_bothstrands_paired_B.R    \
+asm_bothstrand_paired_CLL_v2.R
