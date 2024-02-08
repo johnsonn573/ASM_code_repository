@@ -150,7 +150,10 @@ matrix.u2B01.asm: counts of all unmethylated reads on the anti-sense strand by c
     \
 These matrices were created for all B-cell samples and all CLL samples.
 
+## Computing likelihoods
 
-
+To compute likelihoods at both the sample-level and global (i.e. all B-cell samples or all CLL samples), we used the following scripts:    \
+likelihood_global_CLL.R    \
+likelihood_B.R    \
 
 
