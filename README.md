@@ -157,6 +157,19 @@ To compute likelihoods at both the sample-level and global (i.e. all B-cell samp
 likelihood_global_CLL.R    \
 likelihood_B.R
 
+## Global ASM and Manhattan plots (Fig. 2)
 
+This step required the following input files:    \
+    \
+An Ensembl GTF file with a prefix (i.e. "chr") added to each chromosome for the purpose of consistent formatting.    \
+prefixed_Homo_sapiens.GRCh38.87.chr.gtf    \
+    \
+An Excel file with human imprinted genes and their coordinates. The genes for this file were taken from https://www.geneimprint.com/ and manually edited.    \
+Imprinted_Genes2023_coordinates.xlsx    \
+    \
+
+The scripts to generate the manhattan plots are as follows:    \
+manhattan_code_v4_metaZ.R (for B-cell samples)    \
+manhattan_code_metaZ_CLL.R (for CLL samples)
 
 
