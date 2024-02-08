@@ -148,7 +148,7 @@ matrix.m2B01.asm: counts of all methylated reads on the anti-sense strand by cel
 matrix.u1B01.asm: counts of all unmethylated reads on the sense strand by cell & CpG    \
 matrix.u2B01.asm: counts of all unmethylated reads on the anti-sense strand by cell & CpG    \
     \
-These matrices were created for all B-cell samples and all CLL samples.    \
+These matrices were created for all B-cell samples and all CLL samples.
 
 
 
