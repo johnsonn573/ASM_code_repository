@@ -157,6 +157,13 @@ To compute likelihoods at both the sample-level and global (i.e. all B-cell samp
 likelihood_global_CLL.R    \
 likelihood_B.R
 
+## Generating composite p-values 
+
+To account for asymmetry among methylated/unmethylated cells, we performed a one-sided weight Z-test, using the following scripts:    \
+    \
+pvalue2_metaZ_B.R    \
+pvalue2_metaZ_CLL.R    \
+
 ## Global ASM and Manhattan plots (Fig. 2)
 
 This step required the following input files:    \
