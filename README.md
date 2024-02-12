@@ -197,6 +197,12 @@ We built a multi-level logistic regression model to determine the probability of
    \
 comparison_B_CLL_logreads.R
 
+## Identification of imprinting binding motifs.
+
+We ran the following script to find all imprinting binding motifs in the human genome and save it as an R Genomic Ranges object.
+   \
+motif.R
+
 ## Overlap of global ASM with imprinting-related features (Fig. 4).
 
 We quantified the overlap of ASM with imprinting-related features (imprinting binding motifs and imprinted genes) across B-cell samples and CLL samples. See Figure 4.
