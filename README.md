@@ -180,7 +180,29 @@ manhattan_code_metaZ_CLL.R (for CLL samples)
 
 ## Calling sample-level ASM
 
-We used the following scripts to call ASM at the sample level.    \
+We used the following scripts to call ASM at the sample level (Fig. 3A).    \
     \
 asm_bothstrands_paired_B.R    \
 asm_bothstrand_paired_CLL_v2.R
+
+## Generate pairwise comparisons of sample-level ASM (Fig. 3B).
+
+We used the following script to compute pairwise overlap of ASM across samples and generate Figure 3B.
+    \
+comparisons_B_CLL.R
+
+## Probability of ASM against the number of reads (Fig. 3C).
+
+We built a multi-level logistic regression model to determine the probability of ASM conditional on the logarithm of the number of reads.
+   \
+comparison_B_CLL_logreads.R
+
+## Overlap of global ASM with imprinting-related features
+
+We quantified the overlap of ASM with imprinting-related features (imprinting binding motifs and imprinted genes) across B-cell samples and CLL samples. See Figure 4.
+   \
+table_ASM_imprinted_global_B_and_CLL.R   \
+table_ASM_motif_global_B_and_CLL.R   \
+   \
+To create Figure 4, the output of the two scripts above is used as input in the following script.   \
+Figure_Overlap_Motif_Imprinted.R
