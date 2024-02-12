@@ -197,7 +197,7 @@ We built a multi-level logistic regression model to determine the probability of
    \
 comparison_B_CLL_logreads.R
 
-## Overlap of global ASM with imprinting-related features
+## Overlap of global ASM with imprinting-related features (Fig. 4).
 
 We quantified the overlap of ASM with imprinting-related features (imprinting binding motifs and imprinted genes) across B-cell samples and CLL samples. See Figure 4.
    \
@@ -205,4 +205,5 @@ table_ASM_imprinted_global_B_and_CLL.R   \
 table_ASM_motif_global_B_and_CLL.R   \
    \
 To create Figure 4, the output of the two scripts above is used as input in the following script.   \
+   \
 Figure_Overlap_Motif_Imprinted.R
