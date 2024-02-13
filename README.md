@@ -164,7 +164,7 @@ To account for asymmetry among methylated/unmethylated cells, we performed a one
 pvalue2_metaZ_B.R    \
 pvalue2_metaZ_CLL.R
 
-## Global ASM and Manhattan plots (Fig. 2)
+## Global ASM and Manhattan plots (Figure 2)
 
 This step required the following input files:    \
     \
@@ -180,18 +180,18 @@ manhattan_code_metaZ_CLL.R (for CLL samples)
 
 ## Calling sample-level ASM
 
-We used the following scripts to call ASM at the sample level (Fig. 3A).    \
+We used the following scripts to call ASM at the sample level (Figure 3A).    \
     \
 asm_bothstrands_paired_B.R    \
 asm_bothstrand_paired_CLL_v2.R
 
-## Generate pairwise comparisons of sample-level ASM (Fig. 3B).
+## Generate pairwise comparisons of sample-level ASM (Figure 3B).
 
 We used the following script to compute pairwise overlap of ASM across samples and generate Figure 3B.
     \
 comparisons_B_CLL.R
 
-## Probability of ASM against the number of reads (Fig. 3C).
+## Probability of ASM against the number of reads (Figure 3C).
 
 We built a multi-level logistic regression model to determine the probability of ASM conditional on the logarithm of the number of reads.
    \
@@ -203,12 +203,12 @@ We ran the following script to find all imprinting binding motifs in the human g
    \
 motif.R
 
-## Overlap of global ASM with imprinting-related features (Fig. 4).
+## Overlap of global ASM with imprinting-related features (Figure 4 and Table 3).
 
 We quantified the overlap of ASM with imprinting-related features (imprinting binding motifs and imprinted genes) across B-cell samples and CLL samples. See Figure 4.
    \
 
-## ASM in 10 kb bins (Fig. 5).
+## ASM in 10 kb bins (Figure 5).
 
 We ran the following script to quantify ASM in 10 kb bins and produce a corresponding manhattan plot.   \
 manhattan_10kb_bin.R
