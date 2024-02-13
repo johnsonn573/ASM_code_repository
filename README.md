@@ -206,7 +206,12 @@ motif.R
 ## Overlap of global ASM with imprinting-related features (Figure 4 and Table 3).
 
 We quantified the overlap of ASM with imprinting-related features (imprinting binding motifs and imprinted genes) across B-cell samples and CLL samples. See Figure 4.
+table_ASM_imprinted_global_B_and_CLL.R   \
+table_ASM_motif_global_B_and_CLL.R   \
    \
+To create Figure 4, the output of the two scripts above is used as input in the following script.   \
+   \
+Figure_Overlap_Motif_Imprinted.R
 
 ## ASM in 10 kb bins (Figure 5).
 
@@ -214,9 +219,3 @@ To run the following scripts, an Rdata file (cov_sample_cell.rda) must be loaded
    \
 We ran the following script to quantify ASM in 10 kb bins and produce a corresponding manhattan plot.   \
 manhattan_10kb_bin.R
-table_ASM_imprinted_global_B_and_CLL.R   \
-table_ASM_motif_global_B_and_CLL.R   \
-   \
-To create Figure 4, the output of the two scripts above is used as input in the following script.   \
-   \
-Figure_Overlap_Motif_Imprinted.R
