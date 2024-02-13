@@ -210,6 +210,8 @@ We quantified the overlap of ASM with imprinting-related features (imprinting bi
 
 ## ASM in 10 kb bins (Figure 5).
 
+To run the following scripts, an Rdata file (cov_sample_cell.rda) must be loaded into R. cov_sample_cell contains annotation information. Specifically, it matches cov file names with sample IDs and cell IDs for B04-B06.    \
+   \
 We ran the following script to quantify ASM in 10 kb bins and produce a corresponding manhattan plot.   \
 manhattan_10kb_bin.R
 table_ASM_imprinted_global_B_and_CLL.R   \
