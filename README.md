@@ -205,7 +205,7 @@ motif.R
 
 ## Overlap of global ASM with imprinting-related features (Figure 4 and Table 3).
 
-We quantified the overlap of ASM with imprinting-related features (imprinting binding motifs and imprinted genes) across B-cell samples and CLL samples. See Figure 4.
+We quantified the overlap of ASM with imprinting-related features (imprinting binding motifs and imprinted genes) across B-cell samples and CLL samples. See Figure 4.    \
 table_ASM_imprinted_global_B_and_CLL.R   \
 table_ASM_motif_global_B_and_CLL.R   \
    \
