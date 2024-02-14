@@ -1,4 +1,4 @@
-$!/bin/bash
+#!/bin/bash
 
 ## Example for command line usage of fastqdump_all.sh on HPC control system SGE: 
 # for i in `cat SRRs.txt`; do qsub -v i=$i fastqdump_all.sh; done
