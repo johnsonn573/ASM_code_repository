@@ -2,8 +2,7 @@
 
 ## Downloading Raw Data
 Some raw data description:    \
-The raw data can be downloaded from SRR using fastq-dump from SRA tools. We performed this download on your human genetics Emory server (HGCC).
-More specifically, we ran the following scripts to download the data from SRR.    \
+The following scripts were used to download the data from SRR.    \
 \
 fastqdumpB01B02B03.sh    \
 fastqdumpB04_single.sh    \
@@ -26,16 +25,17 @@ fastqdumpCLL10_single.sh    \
 fastqdumpCLL11_single.sh    \
 fastqdumpCLL12_dual.sh
 
-Note on the RAW data. The raw data is paired-end and is prefixed by SRR IDs (i.e. SRR6464041_1.fastq and SRR6464041_2.fastq). Importantly, reads from the same cell sometimes spans multiple fastq files. We address this issues later on in the pipeline. Some of the shell scripts listed above are suffixed with "single" or "dual," which indicates whether the sample has accompanying scRNAseq data (dual) or not (single).
+The raw data is paired-end and is prefixed by SRR IDs (i.e. SRR6464041_1.fastq and SRR6464041_2.fastq). Importantly, reads from the same cell sometimes spans multiple fastq files. We address this issue later on in the pipeline. Some of the shell scripts listed above are suffixed with "single" or "dual," which indicates whether the sample has accompanying scRNAseq data (dual) or not (single).
 
-## Creating genome file for alignment
+## Alignment preprocessing
 
-Because the raw data was generated from scRRBS in such a way that reads in the final library originated from genomic loci flanked by CCGG regions on both sides within 1000 bps of one another. It is therefore necessary to work with a genome file for which all other regions are masked. To accomplish this, we first created a bed file of all these regions using the script ccgg.r. We then used the script mask_script.sh, which creates a masked genome and subsequently an in silico bisulfite converted genome using Bismark. This was all done using an hg38 version of the human genome.
+The raw data was generated from scRRBS in such a way that reads in the final library originated from genomic loci flanked by CCGG regions on both sides within 1000 bps of one another. It is therefore necessary to work with a genome file for which all other regions are masked. To accomplish this, we first created a bed file of all these regions using the script ccgg.r. We then used the script mask_script.sh, which creates a masked genome and subsequently an *in silico* bisulfite converted genome using Bismark. This was all done using the hg38 version of the human genome.
 
 ## Demultiplexing, alignment, and filtering
 
-Once all the fastq data was deposited onto our server and the genome was created, we ran fastq_to_sc_bam.sh, which is a script that demultiplexes the fastq files, trims the reads, performs genomic alignment using Bismark, and filters out reads with MAPQ scores < 20.
-A qsub command was run on each pair of fastq files. These qsub commands can be found in the txt file qsub_commands_for_fastq_to_sc_bam_script.txt.
+Once all the fastq data was deposited onto our server and the genome was created, we ran fastq_to_sc_bam.sh. This script demultiplexes the fastq files, trims the reads, performs genomic alignment using Bismark, and filters out reads with MAPQ scores < 20.
+
+The HPC control system SGE was used for job submission. Relevant qsub commands can be found in the txt file qsub_commands_for_fastq_to_sc_bam_script.txt.
 
 ## Merging files by cell (CLL samples)
 
@@ -43,7 +43,7 @@ Recall that cells were split across multiple fastq files on SRR when they were o
 
 ## Merging files by cell (B-cell samples)
 
-Similarly to CLL01 and CLL02, we also merged by cell for B01-B03 by first generating a shell script (merge_by_cell_v3.sh) using an R script (merge_by_cell_v3.R) and then running that shell script.
+B-cell samples B01-B03 were merged by running the R script merge_by_cell_v3.R to generate merge_by_cell_v3.sh. The file merge was then performed by running this generated script.
 
 ## Name-sorting bam files.
 
@@ -113,13 +113,13 @@ cll12methylationextract_SRR8579791.sh
 
 ## Converting the remaining cov.gz files to Rdata files.
 
-We used the following scripts to perform the conversion. \
+We used the following scripts to convert the cov.gz files to Rdata files. \
 cov_to_small_paired_CLL.R (CLL samples) \
 cov_to_small_paired_v2.R (B-cell samples)
 
 ## QC Filtering
 
-We filtered out cells with a mean number of reads per CpGs < 5 using the following scripts.
+We filtered out cells with a average number of reads per CpGs < 5 using the following scripts.
 
 cov_to_small_qc_CLL.R \
 cov_to_small_B01B02B03_qc_v2.R \
@@ -127,11 +127,11 @@ cov_to_small_B04B05B06_paired_qc_v2.R
 
 ## Marking CpGs w/ no data
 
-To reduce file sizes in downstream analyses, we created a Genomic Ranges file (cg_genome.gr), which marked all the CpG sites in the human genome using a script called cg_genome.R. We then ran the scripts na_B_v3.R and na_CLL.R, which markes all the CpGs that have no data in B-cell samples and CLL samples, respectively.
+To reduce file sizes in downstream analyses, we created a Genomic Ranges file (cg_genome.gr), which marked all the CpG sites in the human genome using a script called cg_genome.R. We then ran the scripts na_B_v3.R and na_CLL.R. These scripts mark all the CpGs that do not have data in B-cell samples and CLL samples, respectively.
 
 ## Counting methylation at each CpG. 
 
-For each CpG, we counted up the (1) number of fully methylated cells, (2) number of fully unmethylated cells, (3) number of cells with both methylated and unmethylated read overlaps as well as the number of methylated and unmethylated reads originating from each of these 3 types of cells. We used the following scripts to perform this task.
+For each CpG, we counted up the (1) number of fully methylated cells, (2) number of fully unmethylated cells, (3) number of cells with both methylated and unmethylated read overlaps as well as the number of methylated and unmethylated reads originating from each of these 3 types of cells. We used the following scripts to perform these tasks.
 
 cts_per_sample_bothstrands_paired_B.R    \
 cts_per_sample_bothstrands_paired_CLL.R    \
@@ -142,7 +142,7 @@ matrix.m2B01: counts of all methylated reads on the anti-sense strand by cell & 
 matrix.u1B01: counts of all unmethylated reads on the sense strand by cell & CpG    \
 matrix.u2B01: counts of all unmethylated reads on the anti-sense strand by cell & CpG    \
     \
-For the 4 following matrices, only cells w/ both methylated and unmethylated reads included for a given CpG.    \
+For the 4 following matrices, only cells with both methylated and unmethylated reads were included for a given CpG.    \
 matrix.m1B01.asm: counts of all methylated reads on the sense strand by cell & CpG    \
 matrix.m2B01.asm: counts of all methylated reads on the anti-sense strand by cell & CpG    \
 matrix.u1B01.asm: counts of all unmethylated reads on the sense strand by cell & CpG    \
@@ -152,7 +152,7 @@ These matrices were created for all B-cell samples and all CLL samples.
 
 ## Computing likelihoods
 
-To compute likelihoods at both the sample-level and global (i.e. all B-cell samples or all CLL samples), we used the following scripts:    \
+To compute likelihoods at both the sample-level and global levels (i.e. all B-cell samples or all CLL samples), we used the following scripts:    \
     \
 likelihood_global_CLL.R    \
 likelihood_B.R
@@ -166,7 +166,7 @@ pvalue2_metaZ_CLL.R
 
 ## Global ASM and Manhattan plots (Figure 2)
 
-This step required the following input files:    \
+Global ASM and manhattan plots required the following input files:    \
     \
 An Ensembl GTF file with a prefix (i.e. "chr") added to each chromosome for the purpose of consistent formatting.    \
 prefixed_Homo_sapiens.GRCh38.87.chr.gtf    \
@@ -185,7 +185,7 @@ We used the following scripts to call ASM at the sample level (Figure 3A).    \
 asm_bothstrands_paired_B.R    \
 asm_bothstrand_paired_CLL_v2.R
 
-## Generate pairwise comparisons of sample-level ASM (Figure 3B).
+## Generating pairwise comparisons of sample-level ASM (Figure 3B).
 
 We used the following script to compute pairwise overlap of ASM across samples and generate Figure 3B.
     \
