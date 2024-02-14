@@ -19,9 +19,11 @@ source activate nick_conda
 barcodes=( "ACAACC" "ACTCAC" "AGGATG" "ATCGAC" "CAAGAG" "CATGAC" "CCTTCG" "CGGTAG" "CTATTG" "CTCAGC" "GCATTC" "GTGAGG" "GTTGAG" "TATCTC" "TCTCTG" "TGACAG" "TGCTGC" "ACAGAC" "AGAAGG" "ATCAAG" "CCATAG" "GAAGTC" "GGTAAC" "TGTAGG" )
 revcomp_barcodes=( "GGTTGT" "GTGAGT" "CATCCT" "GTCGAT" "CTCTTG" "GTCATG" "CGAAGG" "CTACCG" "CAATAG" "GCTGAG" "GAATGC" "CCTCAC" "CTCAAC" "GAGATA" "CAGAGA" "CTGTCA" "GCAGCA" "GTCTGT" "CCTTCT" "CTTGAT" "CTATGG" "GACTTC" "GTTACC" "CCTACA" )
 
+#####TODO----------------------------------------------------------------------start------
 file_fastq1="/home/Shared/ConneelyLab/nick_method/scRRBS/"$sample"/"$SRR"/"$SRR"_1.fastq"
 file_fastq2="/home/Shared/ConneelyLab/nick_method/scRRBS/"$sample"/"$SRR"/"$SRR"_2.fastq"
 output_dir="/home/Shared/ConneelyLab/nick_method/scRRBS/"$sample"/"$SRR
+######################################-------------------------------------------end -----
 
 cd $output_dir
 
