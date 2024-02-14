@@ -53,6 +53,6 @@ df <- data.frame(seqnames=seqnames(ccgg.regions1000.gr),
                  starts=start(ccgg.regions1000.gr)-1+4,
                  ends=end(ccgg.regions1000.gr)-4)
 
-write.table(df, file="/home/Shared/ConneelyLab/nick_method/scRRBS/hg38mask_CCGG/ccgg.regions1000.bed", quote=F, sep="\t", row.names=F, col.names=F)
+write.table(df, file="ccgg.regions1000.bed", quote=F, sep="\t", row.names=F, col.names=F)
 
 

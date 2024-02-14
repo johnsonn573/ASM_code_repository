@@ -1,6 +1,8 @@
 #!/bin/bash
 
-cd /mnt/icebreaker/data2/home/Shared/ConneelyLab/nick_method/scRRBS/hg38mask_CCGG
+## Software: 
+## bedtools v2.27.0
+## Bismark v0.19.0
 
 Rscript ccgg.r
 
