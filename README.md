@@ -17,7 +17,7 @@ The raw data was generated from scRRBS in such a way that reads in the final lib
 
 Once all the fastq data was deposited onto our server and the genome was created, we ran fastq_to_sc_bam.sh. This script demultiplexes the fastq files, trims the reads, performs genomic alignment using Bismark, and filters out reads with MAPQ scores < 20.
 
-The HPC control system SGE was used for job submission. Relevant qsub commands can be found in the txt file qsub_commands_for_fastq_to_sc_bam_script.txt.
+The HPC control system SGE was used for job submission. Submission using qsub can be applied with qsub_submit.sh, which requires input from SRRs.txt. 
 
 ## Merging files by cell (CLL samples)
 
