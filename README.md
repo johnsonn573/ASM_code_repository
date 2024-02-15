@@ -35,38 +35,19 @@ namesort.sh    \
 \
 The script relies on samtools v1.3 and is run with the inputfile path and outputfile path as the first and second arguments:    \
 \
-./namesort.sh ~/my/input/path ~/my/output/path
+./namesort.sh ~/my/input/path ~/my/output/path    \
 \
 ## Bismark methylation extractor.
 
-We ran the bismark methylating extractor on each bam file using the following scripts.    \
+We ran the bismark methylating extractor on each bam file using the following script.    \
 \
-b01methylationextract.sh    \
-b02methylationextract.sh    \
-b03methylationextract.sh    \
-b04methylationextract.sh    \
-b05methylationextract.sh    \
-b06methylationextract.sh    \
-cll01methylationextract.sh    \
-cll02methylationextract.sh    \
-cll03_dual_methylationextract.sh    \
-cll04methylationextract.sh    \
-cll05_alone_methylationextract.sh    \
-cll05_dual_methylationextract.sh    \
-cll06_alone_methylationextract.sh    \
-cll07_alone_methylationextract.sh    \
-cll08_alone_methylationextract.sh    \
-cll09_alone_methylationextract.sh    \
-cll09_alone_methylationextract_SRR8579782.sh    \
-cll09_alone_methylationextract_SRR8579783.sh    \
-cll10methylationextract.sh    \
-cll10methylationextract_SRR8579785.sh    \
-cll10methylationextract_SRR8579786.sh    \
-cll10methylationextract_SRR8579787.sh    \
-cll11methylationextract.sh    \
-cll12methylationextract.sh    \
-cll12methylationextract_SRR8579789.sh    \
-cll12methylationextract_SRR8579791.sh
+
+methylationextract.sh    \
+
+The script uses Bismark v0.19.0. Inputfile path and outputfile path are the first and second arguments. For example:
+
+./methylationextract.sh ~/my/input/path ~/my/output/path
+
 
 ## Converting the remaining cov.gz files to Rdata files.
 
