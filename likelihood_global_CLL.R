@@ -10,13 +10,14 @@
 # Since we are not interested in strand, we are combining counts from strand 1 and strand 2.
 rm(list=ls())
 gc()
+path=paste0(getwd(),"/")
 
 sample.IDs <- c("CLL01","CLL02","CLL03","CLL04","CLL05","CLL06",
                 "CLL07","CLL08","CLL09","CLL10","CLL11","CLL12")
 
 for(i in 1:length(sample.IDs)){
   print(i)
-  load(paste0("C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/matrix.",sample.IDs[i],".rda"))
+  load(paste0(path,"data/sample_matrices/matrix.",sample.IDs[i],".rda"))
   matrix.u1<-get(paste0("matrix.u1",sample.IDs[i]))
   matrix.u2<-get(paste0("matrix.u2",sample.IDs[i]))
   matrix.u=matrix.u1+matrix.u2
@@ -282,6 +283,6 @@ p.asm.global=p.asm.matrix
 l.asm.global=l.asm.matrix
 
 save(list=c("p.asm.global","l.asm.global"),
-     file=paste0("C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/likelihood_global_v2.rda"))
+     file=paste0(path,"data/sample_matrices/likelihood_global_v2.rda"))
 
 
