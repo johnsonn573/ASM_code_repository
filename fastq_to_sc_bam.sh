@@ -17,14 +17,6 @@
 # bbmap at https://github.com/BioInfoTools/BBMap?tab=readme-ov-file for filterbyname.sh
 # TrimGalore v0.6.5
 
-#####################################
-# module load Anaconda2
-# source activate nick_conda
-# module load samtools/1.3
-# module load fastx/0.0.14
-# module load Bismark
-#####################################
-
 # barcodes=( "TATCTC" "TCTCTG" )
 # revcomp_barcodes=( "GAGATA" "CAGAGA" )
 
@@ -48,11 +40,8 @@ rm *_tr1.fastq
 rm *_tr2.fastq
 rm *gz
 
-# export PATH="/home/Shared/ConneelyLab/nick_method/scRRBS/CLL04/bbmap:$PATH"
-
 #########################################################################################
 #### Start of demultiplexing
-
 
 awk '(NR%4==1)' $file_fastq1 > var1_1
 awk '(NR%4==2)' $file_fastq1 | cut -c 1-6 > var2_1
@@ -140,19 +129,14 @@ rm *_tr1a_val_1.fq
 rm *val_1_bismark_bt2_pe.bam
 rm *sorted20.bam
 
-
-
 # for i in {0..1} ; do
 for i in {0..23} ; do
     filterbyname.sh in=$file_fastq1 out="$SRR"_"${barcodes[$i]}"_tr1.fastq names="${barcodes[$i]}" include=true overwrite=true
     filterbyname.sh in=$file_fastq2 out="$SRR"_"${barcodes[$i]}"_tr2.fastq names="${barcodes[$i]}" include=true overwrite=true
     fastx_trimmer -f 8 -i "$SRR"_"${barcodes[$i]}"_tr1.fastq -o "$SRR"_"${barcodes[$i]}"_tr1a.fastq
     fastx_trimmer -f 8 -i "$SRR"_"${barcodes[$i]}"_tr2.fastq -o "$SRR"_"${barcodes[$i]}"_tr2a.fastq
-    /home/njohnson/TrimGalore-0.6.5/trim_galore --rrbs --paired --adapter "${revcomp_barcodes[$i]}" --three_prime_clip_R1 3 --three_prime_clip_R2 3 "$SRR"_"${barcodes[$i]}"_tr1a.fastq "$SRR"_"${barcodes[$i]}"_tr2a.fastq -o $output_dir
+    trim_galore --rrbs --paired --adapter "${revcomp_barcodes[$i]}" --three_prime_clip_R1 3 --three_prime_clip_R2 3 "$SRR"_"${barcodes[$i]}"_tr1a.fastq "$SRR"_"${barcodes[$i]}"_tr2a.fastq -o $output_dir
 done
-
-
-
 
 #### End of demultiplexing
 #########################################################################################
@@ -160,8 +144,6 @@ done
 rm sub*
 
 ### Align to hg38 using Bismark
-
-
 
 for f in *_tr1a_val_1.fq
 do
@@ -187,9 +169,3 @@ done
 
 
 mv *sorted20.bam /home/Shared/ConneelyLab/nick_method/scRRBS/sc_bam/"$sample"/notmerged
-
-module unload Anaconda2
-module unload Bismark
-module unload samtools/1.3
-module unload fastx/0.0.14
-module unload Anaconda2

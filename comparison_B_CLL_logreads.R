@@ -1,56 +1,56 @@
-load("C:/Users/User/Dropbox/projects/scrrbs/data/asm_per_sample/bothstrands_paired/asm.strict_B01.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/asm_per_sample/bothstrands_paired/asm.strict_B02.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/asm_per_sample/bothstrands_paired/asm.strict_B03.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/asm_per_sample/bothstrands_paired/asm.strict_B04.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/asm_per_sample/bothstrands_paired/asm.strict_B05.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/asm_per_sample/bothstrands_paired/asm.strict_B06.rda")
+load("asm.strict_B01.rda")
+load("asm.strict_B02.rda")
+load("asm.strict_B03.rda")
+load("asm.strict_B04.rda")
+load("asm.strict_B05.rda")
+load("asm.strict_B06.rda")
 
-load("C:/Users/User/Dropbox/projects/scrrbs/data/asm_per_sample/bothstrands_paired/asm.strict_CLL01.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/asm_per_sample/bothstrands_paired/asm.strict_CLL02.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/asm_per_sample/bothstrands_paired/asm.strict_CLL03.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/asm_per_sample/bothstrands_paired/asm.strict_CLL04.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/asm_per_sample/bothstrands_paired/asm.strict_CLL05.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/asm_per_sample/bothstrands_paired/asm.strict_CLL06.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/asm_per_sample/bothstrands_paired/asm.strict_CLL07.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/asm_per_sample/bothstrands_paired/asm.strict_CLL08.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/asm_per_sample/bothstrands_paired/asm.strict_CLL09.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/asm_per_sample/bothstrands_paired/asm.strict_CLL10.rda")
-#load("C:/Users/User/Dropbox/projects/scrrbs/data/asm_per_sample/bothstrands_paired/asm.strict_CLL11.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/asm_per_sample/bothstrands_paired/asm.strict_CLL12.rda")
+load("asm.strict_CLL01.rda")
+load("asm.strict_CLL02.rda")
+load("asm.strict_CLL03.rda")
+load("asm.strict_CLL04.rda")
+load("asm.strict_CLL05.rda")
+load("asm.strict_CLL06.rda")
+load("asm.strict_CLL07.rda")
+load("asm.strict_CLL08.rda")
+load("asm.strict_CLL09.rda")
+load("asm.strict_CLL10.rda")
+#load("asm.strict_CLL11.rda")
+load("asm.strict_CLL12.rda")
 
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_B01B02B03/cts.B01.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_B01B02B03/cts.B02.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_B01B02B03/cts.B03.rda")
+load("cts.B01.rda")
+load("cts.B02.rda")
+load("cts.B03.rda")
 
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired/cts.B04.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired/cts.B05.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired/cts.B06.rda")
+load("cts.B04.rda")
+load("cts.B05.rda")
+load("cts.B06.rda")
 
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_CLL/cts.CLL01.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_CLL/cts.CLL02.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_CLL/cts.CLL03.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_CLL/cts.CLL04.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_CLL/cts.CLL05.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_CLL/cts.CLL06.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_CLL/cts.CLL07.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_CLL/cts.CLL08.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_CLL/cts.CLL09.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_CLL/cts.CLL10.rda")
-#load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_CLL/cts.CLL11.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_CLL/cts.CLL12.rda")
+load("cts.CLL01.rda")
+load("cts.CLL02.rda")
+load("cts.CLL03.rda")
+load("cts.CLL04.rda")
+load("cts.CLL05.rda")
+load("cts.CLL06.rda")
+load("cts.CLL07.rda")
+load("cts.CLL08.rda")
+load("cts.CLL09.rda")
+load("cts.CLL10.rda")
+#load("cts.CLL11.rda")
+load("cts.CLL12.rda")
 
-load("C:/Users/User/Dropbox/projects/scrrbs/annot/na1_CLL.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/annot/na2_CLL.rda")
+load("na1_CLL.rda")
+load("na2_CLL.rda")
 na1CLL<-na1
 na2CLL<-na2
 
-load("C:/Users/User/Dropbox/projects/scrrbs/annot/na1_B_v3.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/annot/na2_B_v3.rda")
+load("na1_B_v3.rda")
+load("na2_B_v3.rda")
 na1B<-na1
 na2B<-na2
 
 
-load("C:/Users/User/Dropbox/projects/scrrbs/annot/cg_genome38.rda")
+load("cg_genome38.rda")
 
 asm.matrix<-matrix(data=NA,nrow=length(cg_genome38),ncol=17)
 
@@ -306,8 +306,6 @@ x.sample.c.asm<-df.model$reads[sample.C.0]
 points(x.sample.c.asm,y.sample.c.asm,col="darkgoldenrod3",pch=".",cex=.001)
 
 
-
-
 sample.B.0<-sample(size=2000,which(df.model$type=="B"&df.model$asm==0))
 y.sample.b.asm<-df.model$asm[sample.B.0]
 inc1<-y.sample.b.asm==1
@@ -316,11 +314,6 @@ y.sample.b.asm[inc1]<-jitter(y.sample.b.asm[inc1]+.05,amount=.05)
 y.sample.b.asm[inc0]<-jitter(y.sample.b.asm[inc0]-.05,amount=.05)
 x.sample.b.asm<-df.model$reads[sample.B.0]
 points(x.sample.b.asm,y.sample.b.asm,col="forestgreen",pch=".",cex=.001)
-
-
-
-
-
 
 
 df.model$asm[df.model$type=="B"]
