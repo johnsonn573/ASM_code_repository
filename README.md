@@ -36,13 +36,13 @@ namesort.sh    \
 The script relies on samtools v1.3 and is run with the inputfile path and outputfile path as the first and second arguments:    \
 \
 ./namesort.sh ~/my/input/path ~/my/output/path    \
-\
+
 ## Bismark methylation extractor.
 
 We ran the bismark methylating extractor on each bam file using the following script.    \
-\
 
-methylationextract.sh    \
+
+methylationextract.sh    
 
 The script uses Bismark v0.19.0. Inputfile path and outputfile path are the first and second arguments. For example:
 
