@@ -29,39 +29,14 @@ B-cell samples B01-B03 were merged by running the R script merge_by_cell_v3.R to
 
 ## Name-sorting bam files.
 
-We name-sorted all the bam files using samtools with the following scripts.    \
+We name-sorted all the bam files using samtools with the following script.    \
 \
-namesortb01.sh    \
-namesortb02.sh    \
-namesortb03.sh    \
-namesortb04.sh    \
-namesortb05.sh    \
-namesortb06.sh    \
-namesortcll01.sh    \
-namesortcll02.sh    \
-namesortcll03_alone.sh    \
-namesortcll03_dual.sh    \
-namesortcll04.sh    \
-namesortcll04.sh    \
-namesortcll04_dual.sh    \
-namesortcll05_alone.sh    \
-namesortcll05_dual.sh    \
-namesortcll06_alone.sh    \
-namesortcll07_alone.sh    \
-namesortcll08_alone.sh    \
-namesortcll08_alone_SRR8579779.sh    \
-namesortcll09_alone.sh    \
-namesortcll09_alone_SRR8579782.sh    \
-namesortcll09_alone_SRR8579783.sh    \
-namesortcll10_alone.sh    \
-namesortcll10_alone_SRR8579785.sh    \
-namesortcll10_alone_SRR8579787.sh    \
-namesortcll10_alone_SRR8579789.sh    \
-namesortcll11_alone.sh    \
-namesortcll12_dual.sh    \
-namesortcll12_dual_SRR8579789.sh    \
-namesortcll12_dual_SRR8579791.sh
-
+namesort.sh    \
+\
+The script relies on samtools v1.3 and is run with the inputfile path and outputfile path as the first and second arguments:    \
+\
+./namesort.sh ~/my/input/path ~/my/output/path
+\
 ## Bismark methylation extractor.
 
 We ran the bismark methylating extractor on each bam file using the following scripts.    \
