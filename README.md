@@ -5,7 +5,7 @@ Some raw data description:    \
 The following script and txt file were used to download the data from SRR.    \
 \
 SRRs.txt    \
-fastqdump_all.sh    \
+fastqdump_all.sh    
 
 The raw data is paired-end and is prefixed by SRR IDs (i.e. SRR6464041_1.fastq and SRR6464041_2.fastq). Importantly, reads from the same cell sometimes spans multiple fastq files. We address this issue later on in the pipeline. Some of the directory names listed in SRRs.txt are suffixed with "alone" or "dual," which indicates whether the sample has accompanying scRNAseq data (dual) or not (single/alone).
 

@@ -7,6 +7,6 @@ for i in `cat SRRs.txt`;
 do
     samplename=`echo $i | cut -d; -f1`
     dirname=`echo $i | cut -d; -f2`
-    qsub -q b.q -pe smp 10 -cwd -j y -v SRR=${samplename},sample=${dirname} ../fastq_to_sc_bam.sh
+    qsub -pe smp 10 -cwd -j y -v SRR=${samplename},sample=${dirname} ../fastq_to_sc_bam.sh
 done
 

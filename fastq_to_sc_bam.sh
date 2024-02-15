@@ -9,9 +9,21 @@
 ## running, there will be 24 output files ending in .cov, one for each cell. 
 ## These files contain the methylation calls for each CpG site.
 
+## Relevant software include:
+# conda environment (see conda_list_available_tools.txt)
+# samtools v1.3
+# fastx v0.014
+# Bismark v0.19.0
+# bbmap at https://github.com/BioInfoTools/BBMap?tab=readme-ov-file for filterbyname.sh
+# TrimGalore v0.6.5
 
-module load Anaconda2
-source activate nick_conda
+#####################################
+# module load Anaconda2
+# source activate nick_conda
+# module load samtools/1.3
+# module load fastx/0.0.14
+# module load Bismark
+#####################################
 
 # barcodes=( "TATCTC" "TCTCTG" )
 # revcomp_barcodes=( "GAGATA" "CAGAGA" )
@@ -19,11 +31,12 @@ source activate nick_conda
 barcodes=( "ACAACC" "ACTCAC" "AGGATG" "ATCGAC" "CAAGAG" "CATGAC" "CCTTCG" "CGGTAG" "CTATTG" "CTCAGC" "GCATTC" "GTGAGG" "GTTGAG" "TATCTC" "TCTCTG" "TGACAG" "TGCTGC" "ACAGAC" "AGAAGG" "ATCAAG" "CCATAG" "GAAGTC" "GGTAAC" "TGTAGG" )
 revcomp_barcodes=( "GGTTGT" "GTGAGT" "CATCCT" "GTCGAT" "CTCTTG" "GTCATG" "CGAAGG" "CTACCG" "CAATAG" "GCTGAG" "GAATGC" "CCTCAC" "CTCAAC" "GAGATA" "CAGAGA" "CTGTCA" "GCAGCA" "GTCTGT" "CCTTCT" "CTTGAT" "CTATGG" "GACTTC" "GTTACC" "CCTACA" )
 
-#####TODO----------------------------------------------------------------------start------
-file_fastq1="/home/Shared/ConneelyLab/nick_method/scRRBS/"$sample"/"$SRR"/"$SRR"_1.fastq"
-file_fastq2="/home/Shared/ConneelyLab/nick_method/scRRBS/"$sample"/"$SRR"/"$SRR"_2.fastq"
-output_dir="/home/Shared/ConneelyLab/nick_method/scRRBS/"$sample"/"$SRR
-######################################-------------------------------------------end -----
+
+ip=`echo $PWD/${sample}/${SRR}/${SRR}`
+file_fastq1=`echo ${ip}_1.fastq`
+file_fastq2=`echo ${ip}_2.fastq`
+output_dir=`echo $PWD/${sample}/${SRR}/` 
+
 
 cd $output_dir
 
@@ -35,7 +48,7 @@ rm *_tr1.fastq
 rm *_tr2.fastq
 rm *gz
 
-export PATH="/home/Shared/ConneelyLab/nick_method/scRRBS/CLL04/bbmap:$PATH"
+# export PATH="/home/Shared/ConneelyLab/nick_method/scRRBS/CLL04/bbmap:$PATH"
 
 #########################################################################################
 #### Start of demultiplexing
@@ -127,20 +140,19 @@ rm *_tr1a_val_1.fq
 rm *val_1_bismark_bt2_pe.bam
 rm *sorted20.bam
 
-module load fastx/0.0.14
+
 
 # for i in {0..1} ; do
 for i in {0..23} ; do
-filterbyname.sh in=$file_fastq1 out="$SRR"_"${barcodes[$i]}"_tr1.fastq names="${barcodes[$i]}" include=true overwrite=true
-filterbyname.sh in=$file_fastq2 out="$SRR"_"${barcodes[$i]}"_tr2.fastq names="${barcodes[$i]}" include=true overwrite=true
-fastx_trimmer -f 8 -i "$SRR"_"${barcodes[$i]}"_tr1.fastq -o "$SRR"_"${barcodes[$i]}"_tr1a.fastq
-fastx_trimmer -f 8 -i "$SRR"_"${barcodes[$i]}"_tr2.fastq -o "$SRR"_"${barcodes[$i]}"_tr2a.fastq
-/home/njohnson/TrimGalore-0.6.5/trim_galore --rrbs --paired --adapter "${revcomp_barcodes[$i]}" --three_prime_clip_R1 3 --three_prime_clip_R2 3 "$SRR"_"${barcodes[$i]}"_tr1a.fastq "$SRR"_"${barcodes[$i]}"_tr2a.fastq -o $output_dir
+    filterbyname.sh in=$file_fastq1 out="$SRR"_"${barcodes[$i]}"_tr1.fastq names="${barcodes[$i]}" include=true overwrite=true
+    filterbyname.sh in=$file_fastq2 out="$SRR"_"${barcodes[$i]}"_tr2.fastq names="${barcodes[$i]}" include=true overwrite=true
+    fastx_trimmer -f 8 -i "$SRR"_"${barcodes[$i]}"_tr1.fastq -o "$SRR"_"${barcodes[$i]}"_tr1a.fastq
+    fastx_trimmer -f 8 -i "$SRR"_"${barcodes[$i]}"_tr2.fastq -o "$SRR"_"${barcodes[$i]}"_tr2a.fastq
+    /home/njohnson/TrimGalore-0.6.5/trim_galore --rrbs --paired --adapter "${revcomp_barcodes[$i]}" --three_prime_clip_R1 3 --three_prime_clip_R2 3 "$SRR"_"${barcodes[$i]}"_tr1a.fastq "$SRR"_"${barcodes[$i]}"_tr2a.fastq -o $output_dir
 done
 
 
-module unload fastx/0.0.14
-module unload Anaconda2
+
 
 #### End of demultiplexing
 #########################################################################################
@@ -149,33 +161,35 @@ rm sub*
 
 ### Align to hg38 using Bismark
 
-module load Bismark
+
 
 for f in *_tr1a_val_1.fq
 do
-name=${f:0:17}
-echo $name
-bismark --bowtie2 -N 1 -L 32 /home/Shared/ConneelyLab/nick_method/scRRBS/hg38mask_CCGG -1 "$name"_tr1a_val_1.fq -2 "$name"_tr2a_val_2.fq
+    name=${f:0:17}
+    echo $name
+    bismark --bowtie2 -N 1 -L 32 /home/Shared/ConneelyLab/nick_method/scRRBS/hg38mask_CCGG -1 "$name"_tr1a_val_1.fq -2 "$name"_tr2a_val_2.fq
 done
 
-module unload Bismark
+
 
 mv *_tr1a_val_1.fq /home/Shared/ConneelyLab/nick_method/scRRBS/sc_fastq
 mv *_tr2a_val_2.fq /home/Shared/ConneelyLab/nick_method/scRRBS/sc_fastq
 
 ### Use samtools to sort and filter out MAPQ scores less than 20
 
-module load samtools/1.3
 
 for g in *val_1_bismark_bt2_pe.bam
 do
-filename=${g:0:17}
-samtools sort -n "$filename"_tr1a_val_1_bismark_bt2_pe.bam > "$filename"sorted.bam
-samtools view -bq 20 "$filename"sorted.bam > "$filename"sorted20.bam
+    filename=${g:0:17}
+    samtools sort -n "$filename"_tr1a_val_1_bismark_bt2_pe.bam > "$filename"sorted.bam
+    samtools view -bq 20 "$filename"sorted.bam > "$filename"sorted20.bam
 done
-module unload samtools/1.3
+
 
 mv *sorted20.bam /home/Shared/ConneelyLab/nick_method/scRRBS/sc_bam/"$sample"/notmerged
 
 module unload Anaconda2
-
+module unload Bismark
+module unload samtools/1.3
+module unload fastx/0.0.14
+module unload Anaconda2
