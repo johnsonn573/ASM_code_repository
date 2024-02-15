@@ -1,6 +1,5 @@
 
 # RUN THIS ON LINUX. DO NOT RUN ON WINDOWS! THE OUTPUT FILE WON'T WORK!
-# Fixing the numbering. Went from 1 to 92 then skipped to 100.
 
 if(substr(getwd(),1,1)=="C"){o=1}else{o=2}
 path=c("C:/Users/User/Dropbox/projects/scrrbs/","/home/nick/Dropbox/projects/scrrbs/")[o];rm(o)
