@@ -29,17 +29,17 @@ B-cell samples B01-B03 were merged by running the R script merge_by_cell_v3.R to
 
 ## Name-sorting bam files.
 
-We name-sorted all the bam files using samtools with the following script.    \
-\
-namesort.sh    \
-\
-The script relies on samtools v1.3 and is run with the inputfile path and outputfile path as the first and second arguments:    \
-\
-./namesort.sh ~/my/input/path ~/my/output/path    \
+We name-sorted all the bam files using samtools with the following script.    
+
+namesort.sh    
+
+The script relies on samtools v1.3 and is run with the inputfile path and outputfile path as the first and second arguments:    
+
+./namesort.sh ~/my/input/path ~/my/output/path    
 
 ## Bismark methylation extractor.
 
-We ran the bismark methylating extractor on each bam file using the following script.    \
+We ran the bismark methylating extractor on each bam file using the following script.    
 
 
 methylationextract.sh    
