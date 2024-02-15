@@ -1,11 +1,5 @@
 
-# Adapted from:
-# C:/Users/User/Dropbox/projects/scrrbs/code/cts_per_sample_bothstrands_paired_v5.R
-
-if(substr(getwd(),1,1)=="C"){o=1}else{o=2}
-path=c("C:/Users/User/Dropbox/projects/scrrbs/","/home/nick/Dropbox/projects/scrrbs/")[o];rm(o)
-
-
+path=paste0(getwd(), "/")
 
 # Script purpose
 # To do the same thing as cts_per_sample.R, except with both strands.
@@ -43,17 +37,13 @@ seqlevels(cg2)=substr(seqlevels(cg_genome38),4,6)
 cg2.notna=cg2[!na1|!na2]
 
 
-
 # These are for making substrings of sample names. B04, B05, and B06 have 2 fewer characters than CLL samples
 num.characters1=c(3,3,3);num.characters1
 num.characters2=c(7,7,7);num.characters2
 load(paste0(path,"annot/cov_sample_cell_CLL.rda"))
 
 
-
-
 files.all=list.files(paste0(path,"data/cov_to_small_CLL_qc"))
-
 
 
 samples=unique(cov_sample_cell_CLL$sample)

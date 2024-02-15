@@ -1,11 +1,10 @@
-if(substr(getwd(),1,1)=="C"){o=1}else{o=2}
-path=c("C:/Users/User/Dropbox/projects/scrrbs/","/home/nick/Dropbox/projects/scrrbs/")[o];rm(o)
+path=paste0(getwd(), "/")
 
 library(GenomicRanges)
 
-load("C:/Users/User/Dropbox/projects/scrrbs/annot/na1_CLL.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/annot/na2_CLL.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/annot/cg_genome38.rda")
+load("na1_CLL.rda")
+load("na2_CLL.rda")
+load("cg_genome38.rda")
 
 cg=cg_genome38[!na1|!na2]
 seqlevels(cg)=substr(seqlevels(cg),4,100)

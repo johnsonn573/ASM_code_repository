@@ -1,8 +1,7 @@
 rm(list=ls())
 # This script is modified from cov_to_small_B01B02B03_qc_v2.R
 
-if(substr(getwd(),1,1)=="C"){o=1}else{o=2}
-path=c("C:/Users/User/Dropbox/projects/scrrbs/","/home/nick/Dropbox/projects/scrrbs/")[o];rm(o)
+path=paste0(getwd(),"/")
 
 # Script purpose
 # To perform QC on the cov_to_small files

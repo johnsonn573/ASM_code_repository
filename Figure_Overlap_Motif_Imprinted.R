@@ -1,6 +1,6 @@
 
-load("C:/Users/User/Dropbox/projects/scrrbs/data/df.ggplot.motif.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/df.ggplot.imprintedgene.rda")
+load("df.ggplot.motif.rda")
+load("df.ggplot.imprintedgene.rda")
 
 df.ggplot.imprintedgene
 df.ggplot.motif
@@ -18,7 +18,7 @@ ggplot(data=df.ggplot.B, aes(x=Type, y=proportion,fill=Overlap)) +
   scale_fill_manual(values=c("green3","green4"))+
   geom_errorbar(aes(ymin=proportion-CI, ymax=proportion+CI), width=.2,
                 position=position_dodge(.9))  + ylim(0,0.75) + theme(legend.position = "none")
-ggsave(filename = "C:/Users/User/Dropbox/projects/scrrbs/figs/Overlap_Motif_Imprinted_B.tiff", width = 5, height = 3.5, device='tiff', dpi=700)
+ggsave(filename = "Overlap_Motif_Imprinted_B.tiff", width = 5, height = 3.5, device='tiff', dpi=700)
 
 df.ggplot.CLL<-df.ggplot[df.ggplot$Tissue=="CLL",]
 df.ggplot.CLL$Type<-c("Imprinted?","Imprinted?","Motif?","Motif?")
@@ -29,4 +29,4 @@ ggplot(data=df.ggplot.CLL, aes(x=Type, y=proportion,fill=Overlap)) +
   scale_fill_manual(values=c("darkgoldenrod2","darkgoldenrod4"))+
   geom_errorbar(aes(ymin=proportion-CI, ymax=proportion+CI), width=.2,
                 position=position_dodge(.9))  + ylim(0,0.75) + theme(legend.position = "none")
-ggsave(filename = "C:/Users/User/Dropbox/projects/scrrbs/figs/Overlap_Motif_Imprinted_CLL.tiff", width = 5, height = 3.5, device='tiff', dpi=700)
+ggsave(filename = "Overlap_Motif_Imprinted_CLL.tiff", width = 5, height = 3.5, device='tiff', dpi=700)
