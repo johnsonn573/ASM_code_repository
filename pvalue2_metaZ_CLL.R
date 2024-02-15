@@ -1,5 +1,6 @@
+path=paste0(getwd(),"/")
 files.samples=list.files(path=paste0(path,"data/cts_per_sample/bothstrands_paired_CLL"),full.names=TRUE)
-inc<-files.samples!="C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_CLL/cts.CLL11.rda"
+inc<-files.samples!=paste0(path,"data/cts_per_sample/bothstrands_paired_CLL/cts.CLL11.rda")
 for (i in 1:length(files.samples[inc])){print(i);load(files.samples[inc][i])}
 
 for(i in 1:length(samples[inc])){

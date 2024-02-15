@@ -1,7 +1,6 @@
-if(substr(getwd(),1,2)=="/h"){o=2}else{o=1}
-path=c("C:/Users/User/Dropbox/projects/scrrbs/","/home/nick/Dropbox/projects/scrrbs/")[o];rm(o)
+path=paste0(getwd(),"/")
 #rm(list=ls());gc()
-# adapted from C:/Users/User/Dropbox/projects/scrrbs/code/cpgs_per_bin_manhattan_Dave_v4.R
+# adapted from cpgs_per_bin_manhattan_Dave_v4.R
 
 
 # Script purpose:
@@ -61,7 +60,7 @@ genes.all.gr=makeGRangesFromDataFrame(data.frame(chr=genes.all$seqid,start=genes
 names(genes.all.gr)=genes.all$gene_name
 genes.all.gr.tmp<-genes.all.gr
 
-imprintedgenes<-read.xlsx("C:/Users/User/Dropbox/projects/scrrbs/annot/Imprinted_Genes2023_coordinates.xlsx",sheetIndex = 1)
+imprintedgenes<-read.xlsx(paste0(path,"annot/Imprinted_Genes2023_coordinates.xlsx",sheetIndex = 1))
 imprintedgenes<-imprintedgenes[is.na(imprintedgenes$Remove),]
 imprinted.genes.gr<-makeGRangesFromDataFrame(imprintedgenes)
 names(imprinted.genes.gr)<-imprintedgenes$gene_name
@@ -118,8 +117,8 @@ load(paste0(path,"data/cts_per_sample/bothstrands_paired/cts.B05.rda"))
 load(paste0(path,"data/cts_per_sample/bothstrands_paired/cts.B06.rda"))
 
 #load(paste0(path,"data/global_v_null_dave_v2.rda"),verbose=T)
-load("C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/LRTpvalues_v3_20230418.rda",verbose=T)
-load("C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/pval2metaZ.rda",verbose=T)
+load(paste0(path,"data/sample_matrices/LRTpvalues_v3_20230418.rda",verbose=T))
+load(paste0(path,"data/sample_matrices/pval2metaZ.rda",verbose=T))
 
 log.10.pvalue<-vector(length=length(coverage))
 log.10.pvalue[include]=log10.pval.global.vs.null
