@@ -1,5 +1,4 @@
-if(substr(getwd(),1,2)=="/h"){o=2}else{o=1}
-path=c("C:/Users/User/Dropbox/projects/scrrbs/","/home/nick/Dropbox/projects/scrrbs/")[o];rm(o)
+path=paste0(getwd(),"/")
 #rm(list=ls());gc()
 # Script purpose:
 # Count ASM sites for each sample on both strands.
@@ -18,7 +17,7 @@ for (i in 1:length(files.samples)){print(i);load(files.samples[i])}
 # LRT for whether the ASM reads is more consistent with 50/50 binomial expectation or 1% sequencing error.
 sampleIDs=paste0("B0",1:6)
 
-load("C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/LRTpvalues_v3_20230418.rda")
+load(paste0(path,"data/sample_matrices/LRTpvalues_v3_20230418.rda"))
 
 for(i in 1:6){
   print(i)
@@ -38,7 +37,7 @@ covB06<-rowSums(cts.B06)>0
 
 coverage<-covB01|covB02|covB03|covB04|covB05|covB06
 
-load("C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/pvals2.rda")
+load(paste0(path,"data/sample_matrices/pvals2.rda"))
 
 for (i in 1:length(sampleIDs)){
   print(i)

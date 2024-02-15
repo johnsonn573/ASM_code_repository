@@ -1,5 +1,4 @@
-if(substr(getwd(),1,2)=="/h"){o=2}else{o=1}
-path=c("C:/Users/User/Dropbox/projects/scrrbs/","/home/nick/Dropbox/projects/scrrbs/")[o];rm(o)
+path=paste0(getwd(),"/")
 #rm(list=ls());gc()
 # Script purpose:
 # Count ASM sites for each sample on both strands.
@@ -8,7 +7,7 @@ load(paste0(path,"annot/cov_sample_cell.rda"))
 samples=unique(cov_sample_cell$sample);rm(cov_sample_cell)
 samples=samples[order(samples)];samples
 
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_B01B02B03/cts.B01.rda")
+load(paste0(path,"/cts_per_sample/bothstrands_paired_B01B02B03/cts.B01.rda"))
 
 files.samples=list.files(path=paste0(path,"data/cts_per_sample/bothstrands_paired_CLL"),full.names=TRUE)
 for (i in 1:length(files.samples)){print(i);load(files.samples[i])}
@@ -18,7 +17,7 @@ for (i in 1:length(files.samples)){print(i);load(files.samples[i])}
 sampleIDs=paste0("CLL0",c(1:9))
 sampleIDs=c(sampleIDs,paste0("CLL",c(10,12)))
 
-load("C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/LRTpvalues_CLL_V2.rda",verbose=T)
+load(paste0(path,"data/sample_matrices/LRTpvalues_CLL_V2.rda",verbose=T))
 
 for(i in 1:length(sampleIDs)){
   print(i)

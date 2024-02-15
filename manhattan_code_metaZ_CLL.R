@@ -1,5 +1,4 @@
-if(substr(getwd(),1,2)=="/h"){o=2}else{o=1}
-path=c("C:/Users/User/Dropbox/projects/scrrbs/","/home/nick/Dropbox/projects/scrrbs/")[o];rm(o)
+path=paste(getwd(),'/')
 #rm(list=ls());gc()
 # Script purpose:
 # Count ASM sites for each sample on both strands.
@@ -9,7 +8,7 @@ samples=unique(cov_sample_cell_CLL$sample);rm(cov_sample_cell_CLL)
 samples=samples[order(samples)];samples
 
 files.samples=list.files(path=paste0(path,"data/cts_per_sample/bothstrands_paired_CLL"),full.names=TRUE)
-inc<-files.samples!="C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_CLL/cts.CLL11.rda"
+inc<-files.samples!=paste0(path,"data/cts_per_sample/bothstrands_paired_CLL/cts.CLL11.rda")
 for (i in 1:length(files.samples[inc])){print(i);load(files.samples[inc][i])}
 
 for(i in 1:length(samples[inc])){
@@ -44,7 +43,7 @@ names(genes.all.gr)=genes.all$gene_name
 genes.all.gr.tmp<-genes.all.gr
 
 library(xlsx)
-imprintedgenes<-read.xlsx("C:/Users/User/Dropbox/projects/scrrbs/annot/Imprinted_Genes2023_coordinates.xlsx",sheetName = "Imprinted_Genes2023_coordinates")
+imprintedgenes<-read.xlsx(paste0(path,"annot/Imprinted_Genes2023_coordinates.xlsx",sheetName = "Imprinted_Genes2023_coordinates"))
 imprintedgenes<-imprintedgenes[is.na(imprintedgenes$Remove),]
 imprinted.genes.gr<-makeGRangesFromDataFrame(imprintedgenes)
 names(imprinted.genes.gr)<-imprintedgenes$gene_name
@@ -80,7 +79,7 @@ chr=as.numeric(as.character(chr))
 
 sampleIDs=c("CLL01","CLL02","CLL03","CLL04","CLL05","CLL06","CLL07","CLL08","CLL09","CLL10","CLL12")
 
-load("C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/LRTpvalues_CLL.rda")
+load(paste0(path,"data/sample_matrices/LRTpvalues_CLL.rda"))
 
 alpha<-0.05/sum(coverage)
 # Number of significant ASM CpGs
@@ -100,7 +99,7 @@ cg=cg_genome38[!na1|!na2]
 cg.imprint=cg.coverage[countOverlaps(cg.coverage,imprinted.genes.gr)>0]
 
 res=data.frame(chr=as.character(seqnames(cg)),bp=start(cg),snp=as.character(1:length(cg)),p=log10pval)
-load("C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/pval2metaZ_CLL.rda")
+load(paste0(path,"data/sample_matrices/pval2metaZ_CLL.rda"))
 res.all=data.frame(chr=as.character(seqnames(cg)),bp=start(cg),snp=as.character(1:length(cg)),p=log10pval)
 
 
@@ -117,7 +116,7 @@ sum(10^res.all$p<alpha&UM.cell.cts)
 
 length(cpgs.global.ASM.CLL)
 cpgs.global.ASM.CLL<-cg.sig
-save(list=c("cpgs.global.ASM.CLL","cg.coverage"),file="C:/Users/User/Dropbox/projects/scrrbs/data/cg.global.ASM.CLL.rda")
+save(list=c("cpgs.global.ASM.CLL","cg.coverage"),file=paste0(path,"data/cg.global.ASM.CLL.rda"))
 
 sum(countOverlaps(imprinted.genes.gr,cg.coverage)>0)
 sum(countOverlaps(imprinted.genes.gr,cg.sig)>0)

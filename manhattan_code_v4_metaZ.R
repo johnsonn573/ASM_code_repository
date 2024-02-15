@@ -1,5 +1,4 @@
-if(substr(getwd(),1,2)=="/h"){o=2}else{o=1}
-path=c("C:/Users/User/Dropbox/projects/scrrbs/","/home/nick/Dropbox/projects/scrrbs/")[o];rm(o)
+path=paste0(getwd(),"/")
 #rm(list=ls());gc()
 # Script purpose:
 # Count ASM sites for each sample on both strands.
@@ -13,9 +12,9 @@ for (i in 1:length(files.samples)){print(i);load(files.samples[i])}
 
 #files.samples=list.files(path=paste0(path,"data/cts_per_sample/bothstrands_paired_B01B02B03"),full.names=TRUE)
 #for (i in 1:length(files.samples)){print(i);load(files.samples[i])}
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_B01B02B03/cts.B01.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_B01B02B03/cts.B02.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_B01B02B03/cts.B03.rda")
+load(paste0(path,"data/cts_per_sample/bothstrands_paired_B01B02B03/cts.B01.rda"))
+load(paste0(path,"data/cts_per_sample/bothstrands_paired_B01B02B03/cts.B02.rda"))
+load(paste0(path,"data/cts_per_sample/bothstrands_paired_B01B02B03/cts.B03.rda"))
 
 coverageB01<-rowSums(cts.B01)>0
 coverageB02<-rowSums(cts.B02)>0
@@ -52,7 +51,7 @@ names(genes.all.gr)=genes.all$gene_name
 genes.all.gr.tmp<-genes.all.gr
 
 library(xlsx)
-imprintedgenes<-read.xlsx("C:/Users/User/Dropbox/projects/scrrbs/annot/Imprinted_Genes2023_coordinates.xlsx",sheetName = "Imprinted_Genes2023_coordinates")
+imprintedgenes<-read.xlsx(paste0(path,"annot/Imprinted_Genes2023_coordinates.xlsx",sheetName = "Imprinted_Genes2023_coordinates"))
 imprintedgenes<-imprintedgenes[is.na(imprintedgenes$Remove),]
 imprinted.genes.gr<-makeGRangesFromDataFrame(imprintedgenes)
 names(imprinted.genes.gr)<-imprintedgenes$gene_name
@@ -94,7 +93,7 @@ chr=as.numeric(as.character(chr))
 
 sampleIDs=c("B01","B02","B03")
 
-load("C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/LRTpvalues_v3_20230418.rda",verbose=T)
+load(paste0(path,"data/sample_matrices/LRTpvalues_v3_20230418.rda",verbose=T))
 
 alpha<-0.05/sum(coverage)
 # Number of significant ASM CpGs
@@ -114,7 +113,7 @@ cg=cg_genome38[!na1|!na2]
 cg.imprint=cg.coverage[countOverlaps(cg.coverage,imprinted.genes.gr)>0]
 
 res=data.frame(chr=as.character(seqnames(cg)),bp=start(cg),snp=as.character(1:length(cg)),p=log10pval)
-load("C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/pval2metaZ.rda")
+load(paste0(path,"data/sample_matrices/pval2metaZ.rda"))
 res.all=data.frame(chr=as.character(seqnames(cg)),bp=start(cg),snp=as.character(1:length(cg)),p=log10pval)
 
 
@@ -126,7 +125,7 @@ sum(10^res.all$p<alpha&UM.cell.cts)
 cg.sig<-cg[10^res.all$p<alpha&UM.cell.cts&pval2.metaZ>0.05]
 
 cg.global.ASM<-cg.sig
-save(list=c("cg.global.ASM","cg.coverage"),file="C:/Users/User/Dropbox/projects/scrrbs/data/cg.global.ASM.rda")
+save(list=c("cg.global.ASM","cg.coverage"),file=paste0(path,"data/cg.global.ASM.rda"))
 
 # Imprinted genes overlapping ASM and CpGs with coverage
 sum(countOverlaps(imprinted.genes.gr,cg.coverage)>0)
