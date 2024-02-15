@@ -1,12 +1,12 @@
 #rm(list=ls());gc()
-
+path=paste0(getwd(),"/")
 # Creating the input data for the likelihoods
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_B01B02B03/cts.B01.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_B01B02B03/cts.B02.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_B01B02B03/cts.B03.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired/cts.B04.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired/cts.B05.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired/cts.B06.rda")
+load(paste0(path,"data/cts_per_sample/bothstrands_paired_B01B02B03/cts.B01.rda"))
+load(paste0(path,"data/cts_per_sample/bothstrands_paired_B01B02B03/cts.B02.rda"))
+load(paste0(path,"data/cts_per_sample/bothstrands_paired_B01B02B03/cts.B03.rda"))
+load(paste0(path,"data/cts_per_sample/bothstrands_paired/cts.B04.rda"))
+load(paste0(path,"data/cts_per_sample/bothstrands_paired/cts.B05.rda"))
+load(paste0(path,"data/cts_per_sample/bothstrands_paired/cts.B06.rda"))
 
 # We only car to test CpGs with >1 cells with both U & M reads since this is one of our filtering criteria.
 # Each row is a CpG. Each column is a different count. Column 1 is a count of the number of U&M cells
@@ -25,7 +25,7 @@ df.LRT[df.LRT==0]<-1
 
 sample.names<-c("B01","B02","B03","B04","B05","B06")
 for(i in 1:length(sample.names)){
-  load(paste0("C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/matrix.",sample.names[i],".rda"),verbose=T)
+  load(paste0(path,"data/sample_matrices/matrix.",sample.names[i],".rda"),verbose=T)
   assign(x=paste0("U.matrix",sample.names[i]),value=get(paste0("matrix.u1",sample.names[i]))[include,]+get(paste0("matrix.u2",sample.names[i]))[include,])
   assign(x=paste0("M.matrix",sample.names[i]),value=get(paste0("matrix.m1",sample.names[i]))[include,]+get(paste0("matrix.m2",sample.names[i]))[include,])
   rm(list=paste0(c("matrix.m1","matrix.u1","matrix.m2","matrix.u2"),sample.names[i]))
@@ -33,7 +33,7 @@ for(i in 1:length(sample.names)){
 }
 
 sample.names<-c("B01","B02","B03","B04","B05","B06")
-source("C:/Users/User/Dropbox/projects/scrrbs/code/LRT/likelihood_functions.R")
+source(paste0(path,"code/LRT/likelihood_functions.R"))
 # load("C:/Users/User/Dropbox/projects/scrrbs/likelihoodstuff_forKaren/input_data_v3_forKaren.rda")
 
 # Likelihood for each Individual (This will also be used for Variable ASM)
@@ -105,10 +105,10 @@ for(i in 1:length(sample.names)){
 
 save(list=c("pASM.B01","pASM.B02","pASM.B03","pASM.B04","pASM.B05","pASM.B06",
             "l.B01","l.B02","l.B03","l.B04","l.B05","l.B06","include"),
-     file="C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/likelihoodsIndividual_v3.rda")
+     file=paste0(path,"data/sample_matrices/likelihoodsIndividual_v3.rda"))
 
 save(list=c("l.null.B01","l.null.B02","l.null.B03","l.null.B04","l.null.B05","l.null.B06","include","df.LRT"),
-     file="C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/likelihoodsNullIndividual_v3.rda")
+     file=paste0(path,"data/sample_matrices/likelihoodsNullIndividual_v3.rda"))
 
 ################################################################################
 ################################################################################
@@ -145,17 +145,17 @@ l.global<-l.asm.matrix
 l.null.global<-l.asm.null.matrix
 
 save(list=c("pASM.global","l.global","include"),
-     file="C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/likelihoodGlobal_v3.rda")
+     file=paste0(path,"data/sample_matrices/likelihoodGlobal_v3.rda"))
 save(list=c("l.null.global","include"),
-     file="C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/likelihoodNullGlobal_v3.rda")
+     file=paste0(path,"data/sample_matrices/likelihoodNullGlobal_v3.rda"))
 
 ################################################################################
 ################################################################################
 ################################################################################
 
 # Likelihood ratio Tests
-load("C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/likelihoodGlobal_v3.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/likelihoodNullGlobal_v3.rda")
+load(paste0(path,"data/sample_matrices/likelihoodGlobal_v3.rda"))
+load(paste0(path,"data/sample_matrices/likelihoodNullGlobal_v3.rda"))
 
 # LR for Global ASM vs. Null
 LR.global.vs.null=-2*(l.global[,1]-l.null.global[,1])
@@ -164,8 +164,8 @@ log10.pval.global.vs.null<-pchisq(LR.global.vs.null,df=1,log.p=T,lower.tail = F)
 summary(log10.pval.global.vs.null)
 
 # LR for Variable ASM vs. Null
-load("C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/likelihoodsNullIndividual_v3.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/likelihoodsIndividual_v3.rda")
+load(paste0(path,"data/sample_matrices/likelihoodsNullIndividual_v3.rda"))
+load(paste0(path,"data/sample_matrices/likelihoodsIndividual_v3.rda"))
 
 l.variable.ASM=l.B01+l.B02+l.B03+l.B04+l.B05+l.B06
 l.null.variable.ASM=l.null.B01+l.null.B02+l.null.B03+l.null.B04+l.null.B05+l.null.B06
@@ -219,7 +219,7 @@ summary(log10.pval.B06)
 
 save(
   list=c("LR.global.vs.null","LR.variable.vs.null","log10.pval.global.vs.null","log10.pval.variable.vs.null","log10.pval.B01","log10.pval.B02","log10.pval.B03","log10.pval.B04","log10.pval.B05","log10.pval.B06","include"),
-  file="C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/LRTpvalues_v3_20230418.rda")
+  file=paste0(path,"data/sample_matrices/LRTpvalues_v3_20230418.rda"))
 
 
 
