@@ -24,10 +24,10 @@ barcodes=( "ACAACC" "ACTCAC" "AGGATG" "ATCGAC" "CAAGAG" "CATGAC" "CCTTCG" "CGGTA
 revcomp_barcodes=( "GGTTGT" "GTGAGT" "CATCCT" "GTCGAT" "CTCTTG" "GTCATG" "CGAAGG" "CTACCG" "CAATAG" "GCTGAG" "GAATGC" "CCTCAC" "CTCAAC" "GAGATA" "CAGAGA" "CTGTCA" "GCAGCA" "GTCTGT" "CCTTCT" "CTTGAT" "CTATGG" "GACTTC" "GTTACC" "CCTACA" )
 
 
-ip=`echo $PWD/${sample}/${SRR}/${SRR}`
+ip=`echo ${PWD}/${sample}/${SRR}/${SRR}`
 file_fastq1=`echo ${ip}_1.fastq`
 file_fastq2=`echo ${ip}_2.fastq`
-output_dir=`echo $PWD/${sample}/${SRR}/` 
+output_dir=`echo ${PWD}/${sample}/${SRR}/` 
 
 
 cd $output_dir
@@ -149,13 +149,13 @@ for f in *_tr1a_val_1.fq
 do
     name=${f:0:17}
     echo $name
-    bismark --bowtie2 -N 1 -L 32 /home/Shared/ConneelyLab/nick_method/scRRBS/hg38mask_CCGG -1 "$name"_tr1a_val_1.fq -2 "$name"_tr2a_val_2.fq
+    bismark --bowtie2 -N 1 -L 32 ${PWD}/scRRBS/hg38mask_CCGG -1 "$name"_tr1a_val_1.fq -2 "$name"_tr2a_val_2.fq
 done
 
 
 
-mv *_tr1a_val_1.fq /home/Shared/ConneelyLab/nick_method/scRRBS/sc_fastq
-mv *_tr2a_val_2.fq /home/Shared/ConneelyLab/nick_method/scRRBS/sc_fastq
+mv *_tr1a_val_1.fq ${PWD}/sc_fastq
+mv *_tr2a_val_2.fq ${PWD}/scRRBS/sc_fastq
 
 ### Use samtools to sort and filter out MAPQ scores less than 20
 
@@ -168,4 +168,4 @@ do
 done
 
 
-mv *sorted20.bam /home/Shared/ConneelyLab/nick_method/scRRBS/sc_bam/"$sample"/notmerged
+mv *sorted20.bam ${PWD}/sc_bam/"$sample"/notmerged

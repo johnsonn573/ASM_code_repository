@@ -1,6 +1,4 @@
-if(substr(getwd(),1,1)=="C"){o=1}else{o=2}
-path=c("C:/Users/User/Dropbox/projects/scrrbs/","/home/nick/Dropbox/projects/scrrbs/")[o];rm(o)
-
+path=paste0(getwd(), "/")
 k=1
 j=1
 for (k in 1:2){

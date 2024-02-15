@@ -1,10 +1,10 @@
 
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_B01B02B03/cts.B01.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_B01B02B03/cts.B02.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired_B01B02B03/cts.B03.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired/cts.B04.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired/cts.B05.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/cts_per_sample/bothstrands_paired/cts.B06.rda")
+load("cts.B01.rda")
+load("cts.B02.rda")
+load("cts.B03.rda")
+load("cts.B04.rda")
+load("cts.B05.rda")
+load("cts.B06.rda")
 
 # load("C:/Users/User/Dropbox/projects/scrrbs/likelihoodstuff_forKaren/cts.rda")
 # include<-(cts.B01[,1]+cts.B02[,1]+cts.B03[,1]+cts.B04[,1]+cts.B05[,1]+cts.B06[,1])>1
@@ -83,7 +83,7 @@ pval2.metaZ<-pnorm(Tstat)*2
 # CpGs with 0 M cells and 0 U cells get a value of NA. These should have a p-value of 1.
 pval2.metaZ[is.na(pval2.metaZ)]<-1
 
-load("C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/LRTpvalues_v3_20230418.rda",verbose=TRUE)
+load("LRTpvalues_v3_20230418.rda",verbose=TRUE)
 
 coverageB01<-rowSums(cts.B01)>0
 coverageB02<-rowSums(cts.B02)>0
@@ -98,16 +98,16 @@ alpha<-0.05/sum(coverage)
 sum(10^log10.pval.global.vs.null<alpha)
 sum(10^log10.pval.global.vs.null<alpha&pval2.metaZ[include]>0.05)
 
-save(pval2.metaZ,file="C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/pval2metaZ.rda")
+save(pval2.metaZ,file="pval2metaZ.rda")
 
 ################################################################################
 
-load("C:/Users/User/Dropbox/projects/scrrbs/data/asm_per_sample/bothstrands_paired/asm.strict_B01.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/asm_per_sample/bothstrands_paired/asm.strict_B02.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/asm_per_sample/bothstrands_paired/asm.strict_B03.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/asm_per_sample/bothstrands_paired/asm.strict_B04.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/asm_per_sample/bothstrands_paired/asm.strict_B05.rda")
-load("C:/Users/User/Dropbox/projects/scrrbs/data/asm_per_sample/bothstrands_paired/asm.strict_B06.rda")
+load("asm.strict_B01.rda")
+load("asm.strict_B02.rda")
+load("asm.strict_B03.rda")
+load("asm.strict_B04.rda")
+load("asm.strict_B05.rda")
+load("asm.strict_B06.rda")
 
 alpha<-0.05/sum(coverageB01)
 
@@ -133,7 +133,7 @@ sum(asm.strict.B06)
 sum(asm.strict.B06&exp(log.p.value2.B06)>0.05)
 
 save(list=c("log.p.value2.B01","log.p.value2.B02","log.p.value2.B03","log.p.value2.B04","log.p.value2.B05","log.p.value2.B06"),
-     file="C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/pvals2.rda")
+     file="pvals2.rda")
 
 
 

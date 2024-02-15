@@ -115,7 +115,7 @@ pval2.metaZ<-pnorm(Tstat)*2
 # CpGs with 0 M cells and 0 U cells get a value of NA. These should have a p-value of 1.
 pval2.metaZ[is.na(pval2.metaZ)]<-1
 
-load("C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/LRTpvalues_CLL.rda",verbose=TRUE)
+load("LRTpvalues_CLL.rda",verbose=TRUE)
 
 
 coverage=coverageCLL01|coverageCLL02|coverageCLL03|coverageCLL04|coverageCLL05|coverageCLL06|coverageCLL07|coverageCLL08|coverageCLL09|coverageCLL10|coverageCLL12
@@ -124,4 +124,4 @@ alpha<-0.05/sum(coverage)
 sum(10^log10.pval.global.vs.null<alpha)
 sum(10^log10.pval.global.vs.null<alpha&pval2.metaZ[include]>0.05)
 
-save(pval2.metaZ,file="C:/Users/User/Dropbox/projects/scrrbs/data/sample_matrices/pval2metaZ_CLL.rda")
+save(pval2.metaZ,file="pval2metaZ_CLL.rda")
